@@ -255,6 +255,8 @@ Jangan lupa juga, bahwa **testem** juga melaporkan progress test kita pada conso
 
 ![](pics/testem-test-progress-4tests.jpeg)
 
+### Menstrukturkan Test Suite
+
 ## Mata-mata
 
 TODO
