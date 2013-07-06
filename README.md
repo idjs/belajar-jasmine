@@ -249,6 +249,12 @@ Dan, yap, hasilnya hijau:
 
 ![](pics/testme-add-return-value-passed.jpeg)
 
+Ok, sampai disini semoga kita dapat melihat bagaiman **testem** telah memudahkan kita dalam menggunakan jasmine. Kita dapat memperoleh hasil dari testing secara langsung dan otomatis tiap kali kode kita mengalami perubahan.
+
+Jangan lupa juga, bahwa **testem** juga melaporkan progress test kita pada console dimana command **testem** dijalankan:
+
+![](pics/testem-test-progress-4tests.jpeg)
+
 ## Eksplirasi fungsi pengujian asynchronous
 
 TODO
