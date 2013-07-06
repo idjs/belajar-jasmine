@@ -41,7 +41,7 @@ Jangan khawatir mengenai sintaks `expect` dan `toEqual` dari contoh di atas. Kit
 
 Fungsi `add` akan bernilai benar bila hasil penambahan dari vektor `v1` dan `v2` menghasilkan sebuah objek dengan properti `x` bernilai 15, dan properti `y` bernilai 15. Maka kita dapat menguji hal ini dengan memastikan bahwa ketika `v1` dan `v2` dijumlahkan (berdasarkan contoh di atas), hasil yang dikembalikan memang sesuai dengan hasil yang kita harapkan.
 
-## Menggunakan Jasmine
+## Menggunakan Jasmine dengan bantuan Testem
 
 Untuk menggunakan jasmine, kita dapat menggunakan sebuah alat bernama **testem**. Alat ini bertugas untuk menjalankan code test yang telah kita buat.
 
@@ -51,7 +51,28 @@ Untuk menggunakan **testem**, kita dapat memasangnya menggunakan package manager
 
 ## Setup Kode
 
-TODO
+Contoh dari kode yang akan kita buat pada artikel ini dapat pembaca lihat di dalam folder `code` pada repository ini. Kami dengan sengaja menstrukturkan kode berdasarkan direktori `src` dan `specs`. Seluruh kode aplikasi kami letakkan di dalam direktori `src`, dan seluruh kode test kami letakkan di dalam direktori `specs`.
+
+Agar **testem** dapat mengenali kode yang sudah kita tulis, kita perlu memberitahu **testem** mengenai struktur direktori kita. Kami mengasumsikan bahwa direktori utama dari project ini adalah direktori `code`.
+
+Jadi pertama, kita membuat sebuah berkas untuk menuliskan konfigurasi. Berkas tersebut bernama `testem.json` dan kita letakkan pada path `code/testem.json`. Isi dari berkas tersebut adalah:
+
+    {
+        "framework": "jasmine",
+        "src_files": [
+            "src/**/*.js",
+            "specs/**/*Spec.js"
+        ],
+        "launch_in_dev": ["Firefox"]
+    }
+
+Pada konfigurasi di atas, kita menentukan bahwa kita hendak menggunakan **jasmine** untuk testnya. Kita juga sudah menentukan dimana kode kita berada pada **properti** `src_files`. Kemudian kita menentukan bahwa kita hendak menjalankan test ini pada browser Firefox.
+
+Mengenai pilihan browser, pembaca dapat menggunakan browser yang berbeda. **Testem** sudah mendukung banyak jenis browser. **Testem** juga dapat mengenali browser apa saja yang sudah terpasang pada sistem pembaca. Untuk mengetahuinya, silahkan jalankan perintah berikut pada console:
+
+> testem launchers
+
+Dan pembaca dapat memilih daftar browser yang sudah dideteksi oleh **testem**, kemudian menuliskannya pada properti `launch_in_dev`.
 
 ## Eksplorasi fungsi-fungsi Jasmine
 
