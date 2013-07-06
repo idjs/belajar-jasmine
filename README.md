@@ -255,15 +255,15 @@ Jangan lupa juga, bahwa **testem** juga melaporkan progress test kita pada conso
 
 ![](pics/testem-test-progress-4tests.jpeg)
 
-## Eksplirasi fungsi pengujian asynchronous
+## Mata-mata
 
 TODO
 
-## Testing Otomatis menggunakan PhantomJS
+## Eksplorasi fungsi pengujian asynchronous
 
 TODO
 
-## Testing Otomatis menggunakan Karma
+## Beberapa plugin untuk Jasmine
 
 TODO
 
