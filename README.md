@@ -41,3 +41,23 @@ Jangan khawatir mengenai sintaks `expect` dan `toEqual` dari contoh di atas. Kit
 
 Fungsi `add` akan bernilai benar bila hasil penambahan dari vektor `v1` dan `v2` menghasilkan sebuah objek dengan properti `x` bernilai 15, dan properti `y` bernilai 15. Maka kita dapat menguji hal ini dengan memastikan bahwa ketika `v1` dan `v2` dijumlahkan (berdasarkan contoh di atas), hasil yang dikembalikan memang sesuai dengan hasil yang kita harapkan.
 
+## Menggunakan Jasmine pada project
+
+TODO
+
+## Eksplorasi fungsi-fungsi Jasmine
+
+TODO
+
+## Eksplirasi fungsi pengujian asynchronous
+
+TODO
+
+## Testing Otomatis menggunakan PhantomJS
+
+TODO
+
+## Testing Otomatis menggunakan Karma
+
+TODO
+
