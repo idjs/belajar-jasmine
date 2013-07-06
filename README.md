@@ -182,6 +182,73 @@ Dan ketika kita simpan, warna hijau muncul kembali. :D
 
 Ok, pada titik ini, kita sudah berkenalan dengan lima kata kunci pada Jasmine, yaitu `describe`, `it`, `expect`, `toBeDefined`, dan `toBe`. Jasmine masih menyediakan banyak fungsi lainnya yang bertujuan untuk memudahkan penulisan kode test kita.
 
+Sekarang saatnya kita menguji apakah `vector2d.add()` akan mengembalikan jawaban sesaui dengan harapan kita. Bila kita menambahkan dua buah vektor, `v1` dan `v2`, dimana pada tiap vektor, terdapat properti `x` dan `y`, maka kita juga mengharapkan metode `vector2d.add()` mengembalikan jawaban berupa sebuah objek dengan properti `x` dan `y` pula.
+
+Jadi, misal:
+
+    var v1 = {
+            x: 20,
+            y: 30
+        },
+        v2 = {
+            x: 5,
+            y: 1
+        };
+
+Maka, bila kedua objek di atas dijumlahkan, seharusnya hasilnya adalah sebuah objek dengan properti `x` bernilai `25`, dan `y` bernilai `31`.
+
+Untuk memastikan hal tersebut, mari kita buat testnya terlebih dahulu. Kita akan melakukannya secara bertahap. Pertama, kita periksa bahwa nilai yang dikembalikan oleh metode `add` memiliki properti `x` dan `y`:
+
+    it("Add method should return an object with property x and y", function(){
+        var v1 = { x: 20, y: 30},
+            v2 = { x: 5, y: 1};
+
+        expect(vector2d.add(v1, v2).hasOwnProperty("x")).toBeTruthy();
+    });
+
+Apa yang terjadi ketika kita menyimpan kode test di atas?
+
+![](pics/testme-add-return.jpeg)
+
+Ok, kita memang belum mengembalikan apapun ketika metode `add` dijalankan (perhatikan **TypeError: vector2d.add(...) is undefined**). Mari kita buat kode secukupnya agar kode test kita berwarna hijau:
+
+    var vector2d = {
+        add: function(){
+            return {x: 0, y: 0};
+        }
+    };
+
+Hasilnya? Hijau.
+
+![](pics/testme-add-return-passed.jpeg)
+
+Sekarang saatnya memeriksa apakah kembalian dari metode `add` bernilai benar.
+
+    it("Add method should return the correct answer", function(){
+        var v1 = { x: 20, y: 30},
+            v2 = { x: 5, y: 1};
+
+        expect(vector2d.add(v1, v2)).toEqual({x: 25, y: 31});
+    });
+
+Namun, kode test di atas akan menghasilkan:
+
+![](pics/testme-add-return-value-failed.jpeg)
+
+Perhatikan bagaimana jasmine memberitahukan kepada kita, kesalahan yang berhasil ditangkap oleh kode test terhadap module `vector2d`. Ketika kita mengharapkan kembalian berupa `{x: 25, y: 31}`, metode `add` malah mengembalikan `{x: 0, y: 0}`. Jelas bukan pesan errornya?
+
+Saatnya memperbaiki metode `add`:
+
+    var vector2d = {
+        add: function(v1, v2){
+            return {x: v1.x + v2.x , y: v1.y + v2.y};
+        }
+    };
+
+Dan, yap, hasilnya hijau:
+
+![](pics/testme-add-return-value-passed.jpeg)
+
 ## Eksplirasi fungsi pengujian asynchronous
 
 TODO

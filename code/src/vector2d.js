@@ -1,7 +1,7 @@
 (function(global){
     var vector2d = {
-        add: function(){
-
+        add: function(v1, v2){
+            return {x: v1.x + v2.x , y: v1.y + v2.y};
         }
     };
 
