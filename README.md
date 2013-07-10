@@ -289,6 +289,10 @@ Caranya adalah dengan menggunakan `describe`:
         });
     });
 
+Tampilan jasmine kita juga mengalami perubahan:
+
+![](pics/testem-group.jpeg)
+
 ## Mata-mata
 
 TODO
