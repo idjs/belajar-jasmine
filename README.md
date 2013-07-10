@@ -1,5 +1,7 @@
 # Belajar-jasmine
 
+![](pics/banner.png)
+
 ## Pengantar
 
 Misal, kita memiliki fungsi menambahkan dua buah vektor sebagai berikut:
