@@ -347,7 +347,7 @@ Kita dapat memanfaatkan beberapa **matchers** lainnya untuk menguji kode di atas
 
 ### beforeEach dan afterEach
 
-Bila kita ingin menjalankan suatu metode atau langkah-langkah tertentu sebelum setiap **spec** dijalankan, kita dapat memanfaatkan `beforeEach`. Contoh:
+Bila kita ingin menjalankan suatu metode atau langkah-langkah tertentu sebelum setiap **spec** dijalankan, kita dapat memanfaatkan `beforeEach`. Sementara itu, bila kita ingin menjalankan suatu langkah tertentu setelah tiap **specs** selesai dijalankan, kita dapat menggunakan `afterEach`. Contoh:
 
     describe("Substract method", function(){
         var v1, v2;
@@ -355,6 +355,10 @@ Bila kita ingin menjalankan suatu metode atau langkah-langkah tertentu sebelum s
         beforeEach(function(){
             v1 = {x: 20, y: 30};
             v2 = {x: 5, y: 50};
+        });
+
+        afterEach(function(){
+            v1 = v2 = null;
         });
 
         it("Should substract properly", function(){
