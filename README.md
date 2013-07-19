@@ -382,6 +382,8 @@ Bila kita ingin menjalankan suatu metode atau langkah-langkah tertentu sebelum s
         });
     });
 
+Pada contoh di atas, sebelum tiap **spec** dijalankan, kita memberikan nilai kepada variabel `v1` dan `v2`. Tiap kali **specs** dijalankan, `v1` dan `v2` bernilai sesuai dengan nilai yang diberikan ketika `beforeEach` dijalankan.
+
 ## Mata-mata
 
 Mari kita buat sebuah module untuk menghitung jarak antara dua buah vector.
