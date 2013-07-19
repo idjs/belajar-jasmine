@@ -345,7 +345,46 @@ Kita dapat memanfaatkan beberapa **matchers** lainnya untuk menguji kode di atas
 
 ![](pics/testem-substract.jpeg)
 
+### beforeEach dan afterEach
+
+Bila kita ingin menjalankan suatu metode atau langkah-langkah tertentu sebelum setiap **spec** dijalankan, kita dapat memanfaatkan `beforeEach`. Contoh:
+
+    describe("Substract method", function(){
+        var v1, v2;
+
+        beforeEach(function(){
+            v1 = {x: 20, y: 30};
+            v2 = {x: 5, y: 50};
+        });
+
+        it("Should substract properly", function(){
+            expect(vector2d.substract(v1, v2)).toEqual({x: 15, y: -20});
+        });
+
+        it("Should only have x and y as direct properties", function(){
+            var result = vector2d.substract(v1, v2);
+
+            // memeriksa sesuatu bernilai undefined
+            expect(result.a).toBeUndefined();
+
+            // berikut ini sama saja dengan bentuk di atas
+            expect(result.a).not.toBeDefined();
+        });
+
+        it("Should have no problem working with PI", function(){
+            var test = {x: 5, y: Math.PI}, // Math.PI = 3.14.... sekian sekian
+                result = vector2d.substract(v1, test);
+
+            expect(result.y).toBeGreaterThan(26); // lebih besar dari 26
+            expect(result.y).toBeLessThan(27); // kurang dari 27
+
+            expect(result.y).toBeCloseTo(26.85, 1);
+        });
+    });
+
 ## Mata-mata
+
+Mari kita buat sebuah module untuk menghitung jarak antara dua buah vector.
 
 TODO
 
