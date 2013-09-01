@@ -299,17 +299,8 @@ Tampilan jasmine kita juga mengalami perubahan:
 
 Metode seperti `toEqual`, `toBeDefined`, `toBeTruthy` yang sudah kami perlihatkan di atas adalah contoh dari **matchers**. Jasmine memiliki **matchers** lainnya yang dapat digunakan untuk menguji kode yang kita tulis.
 
-Misal, kita memiliki fungsi `substract` berikut (kelanjutan dari module `vector2d` di atas):
 
-    // .. code sebelumnya
-
-    substract: function(v1, v2){
-        return {x: v1.x - v2.x , y: v1.y - v2.y};
-    }
-
-    // .. code berikutnya
-
-Selain **matcher-matcher** di atas, kita juga dapat memanfaatkan **matcher-matcher** berikut yang telah disediakan oleh **jasmine**:
+Beberepa **matcher** lain yang disediakan oleh Jasmine adalah sebagai berikut:
 
 **toBe**
     
