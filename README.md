@@ -1,5 +1,3 @@
-# Belajar-jasmine
-
 ![](pics/banner.png)
 
 ## Pengantar
