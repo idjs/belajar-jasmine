@@ -1,40 +1,70 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <title>Pengantar</title>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  rel="stylesheet" href="/assets/style.css" /><link  rel="stylesheet" href="/assets/monokai.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.3.4/css/semantic.min.css">
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Site Properities -->
+    <title>Pengantar | Belajar Jasmine</title>
+    <meta name="description" content="Unit test dapat membantu tidur kita lebih nyenyak" />
+    <meta name="keywords" content="javascript, jasmine, unit test" />
+
+    <!-- DocPad Meta -->
+    <meta name="generator" content="DocPad v6.53.4" />
+
+    <!-- DocPad Styles + Our Own -->
+    <link  rel="stylesheet" href="/assets/monokai.css" /><link  rel="stylesheet" href="/assets/style.css" />
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.3.0/base-min.css&pure/0.3.0/grids-min.css&pure/0.3.0/buttons-min.css&pure/0.3.0/menus-min.css">
 </head>
 <body>
-
-<div class="ui red vertical sidebar menu" style="display:block;margin-left: 0!important;">
-
-    <div class="item">
-        <h2>Belajar Jasmine</h2>
-        <div class="menu">
-            
-                <a href="/posts/1-Pengantar.html" class="item">Pengantar</a>
-            
-                <a href="/posts/2-Persiapan.html" class="item">Persiapan</a>
-            
-                <a href="/posts/3-Pengantarfungsi.html" class="item">Eksplorasi Jasmine</a>
-            
-                <a href="/posts/4-Matamata.html" class="item">Mata mata</a>
-            
-                <a href="/posts/5-Async.html" class="item">Pengujian Asynchronous</a>
-            
-                <a href="/posts/6-Plugin.html" class="item">Jasmine Plugin</a>
-            
+    <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <div class="pure-g-r" id="layout">
+        <div class="sidebar pure-u">
+            <!-- A wrapper for all the blog posts -->
+            <hgroup class="brand-left">
+                <h1 class="brand-title">Belajar Jasmine</h1>
+                <p class="brand-tagline">Unit test dapat membantu tidur kita lebih nyenyak</p>
+            </hgroup>
+            <nav class="nav">
+                <ul class="nav-list">
+                    
+                    <li class="nav-item">
+                        <a href="/posts/1-Pengantar.html" class="item">Pengantar</a>        
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/posts/2-Persiapan.html" class="item">Persiapan</a>        
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/posts/3-Pengantarfungsi.html" class="item">Eksplorasi Jasmine</a>        
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/posts/4-Matamata.html" class="item">Mata mata</a>        
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/posts/5-Async.html" class="item">Pengujian Asynchronous</a>        
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="/posts/6-Plugin.html" class="item">Jasmine Plugin</a>        
+                    </li>
+                    
+                </ul>
+            </nav>
         </div>
-    </div>
 
-</div>
-
-<div id="content">
-    <h2>Pengantar</h2>
+        <div class="pure-u-1">
+            <div class="content">
+                <h2>Pengantar</h2>
 <p>Misal, kita memiliki fungsi menambahkan dua buah vektor sebagai berikut:</p>
 <pre class="highlighted"><code class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(v1, v2)</span>{</span>
         <span class="keyword">return</span> {x: v1.x + v2.x, y: v1.y + v2.y};
@@ -62,11 +92,12 @@
 <p>Jangan khawatir mengenai sintaks <code>expect</code> dan <code>toEqual</code> dari contoh di atas. Kita akan mempelajari sintaks-sintaks yang dimiliki oleh Jasmine sesegera mungkin. Tetapi inti dari contoh di atas adalah, daripada kita menguji fungsi <code>add</code> secara manual, kita dapat mengotomatiskannya.</p>
 <p>Fungsi <code>add</code> akan bernilai benar bila hasil penambahan dari vektor <code>v1</code> dan <code>v2</code> menghasilkan sebuah objek dengan properti <code>x</code> bernilai 15, dan properti <code>y</code> bernilai 15. Maka kita dapat menguji hal ini dengan memastikan bahwa ketika <code>v1</code> dan <code>v2</code> dijumlahkan (berdasarkan contoh di atas), hasil yang dikembalikan memang sesuai dengan hasil yang kita harapkan.</p>
 
-</div>
+            </div>
+        </div>
+    </div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.3.4/javascript/semantic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-<script defer="defer"  src="/scripts/script.js"></script>
+    <script defer="defer"  src="/scripts/script.js"></script>
 </body>
 </html>
