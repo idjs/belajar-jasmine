@@ -41,13 +41,8 @@ docpadConfig = {
 
             # The website's styles
             styles: [
-                '/assets/monokai.css',
-                '/assets/style.css'
-            ]
-
-            # The website's scripts
-            scripts: [
-                '/scripts/script.js'
+                'assets/monokai.css',
+                'assets/style.css'
             ]
 
 

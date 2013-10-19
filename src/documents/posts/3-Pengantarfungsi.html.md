@@ -12,7 +12,7 @@ Mari kita jalankan **testem** dengan mengetikkan perintah di bawah ini pada cons
 
 Karena kami telah menetapkan bahwa kami ingin menguji kode kami pada browser Firefox, maka **testem** secara otomatis akan menjalankan Firefox. Hasilnya adalah sebagai berikut:
 
-![](/pics/testem-firefox.jpeg)
+![](pics/testem-firefox.jpeg)
 
 Kita belum menuliskan kode apapun. Sehingga belum ada kode yang dapat dites. Mari kita tuliskan test pertama kita. Buatlah sebuah berkas pada alamat `code/specs/vector2dSpec.js`. Pada berkas tersebut, mari kita tuliskan kode test pertama kita.
 
@@ -34,7 +34,7 @@ Jadi, `describe` menunjukkan sebuah **test suite**. **Test Suite** ini semacam k
 
 Di dalam sebuah **test suite**, kita memiliki **specs**. Disinilah kode testing kita tuliskan. Pada contoh di atas, kita memiliki sebuah **specs**, dimana kita mengharapkan bahwa sebuah objek `vector2d` memiliki sebuah properti `add`. Bila kita menyimpan kode di atas, maka tampilan dari browser kita sudah berubah:
 
-![](/pics/testem-ontest.jpeg)
+![](pics/testem-ontest.jpeg)
 
 Mari kita lihat peringatannya:
 
@@ -78,7 +78,7 @@ Ayo kita tambahkan properti add pada objek `vector2d`:
 
 Ketika kode di atas kita simpan, kita memperoleh tanda bahwa kode module `vector2d` sudah lolos uji coba:
 
-![](/pics/testem-passed.jpeg)
+![](pics/testem-passed.jpeg)
 
 Sekarang mari kita buat kode test baru. Seiring kita membuat test, kita juga akan menambahkan kode pada module `vector2d` kita.
 
@@ -98,7 +98,7 @@ Misalnya kita ingin memeriksa bahwa `add` pada `vector2d` adalah sebuah `functio
 
 Dan ketika kita simpan kode di atas, kita akan memperoleh tanda merah:
 
-![](/pics/testem-expected-function.jpeg)
+![](pics/testem-expected-function.jpeg)
 
 Ok, masalahnya adalah, properti `add` pada objek `vector2d` adalah sebuah string, bukan fungsi. Jadi jelaslah jasmine membangkitkan kode di atas. Mari kita perbaiki module `vector2d` kita:
 
@@ -116,7 +116,7 @@ Ok, masalahnya adalah, properti `add` pada objek `vector2d` adalah sebuah string
 
 Dan ketika kita simpan, warna hijau muncul kembali. :D
 
-![](/pics/testem-typeof-function.jpeg)
+![](pics/testem-typeof-function.jpeg)
 
 Ok, pada titik ini, kita sudah berkenalan dengan lima kata kunci pada Jasmine, yaitu `describe`, `it`, `expect`, `toBeDefined`, dan `toBe`. Jasmine masih menyediakan banyak fungsi lainnya yang bertujuan untuk memudahkan penulisan kode test kita.
 
@@ -150,7 +150,7 @@ Untuk memastikan hal tersebut, mari kita buat testnya terlebih dahulu. Kita akan
 
 Apa yang terjadi ketika kita menyimpan kode test di atas?
 
-![](/pics/testme-add-return.jpeg)
+![](pics/testme-add-return.jpeg)
 
 Ok, kita memang belum mengembalikan apapun ketika metode `add` dijalankan (perhatikan **TypeError: vector2d.add(...) is undefined**). Mari kita buat kode secukupnya agar kode test kita berwarna hijau:
 
@@ -164,7 +164,7 @@ Ok, kita memang belum mengembalikan apapun ketika metode `add` dijalankan (perha
 
 Hasilnya? Hijau.
 
-![](/pics/testme-add-return-passed.jpeg)
+![](pics/testme-add-return-passed.jpeg)
 
 Sekarang saatnya memeriksa apakah kembalian dari metode `add` bernilai benar.
 
@@ -179,7 +179,7 @@ Sekarang saatnya memeriksa apakah kembalian dari metode `add` bernilai benar.
 
 Namun, kode test di atas akan menghasilkan:
 
-![](/pics/testme-add-return-value-failed.jpeg)
+![](pics/testme-add-return-value-failed.jpeg)
 
 Perhatikan bagaimana jasmine memberitahukan kepada kita, kesalahan yang berhasil ditangkap oleh kode test terhadap module `vector2d`. Ketika kita mengharapkan kembalian berupa `{x: 25, y: 31}`, metode `add` malah mengembalikan `{x: 0, y: 0}`. Jelas bukan pesan errornya?
 
@@ -195,13 +195,13 @@ Saatnya memperbaiki metode `add`:
 
 Dan, yap, hasilnya hijau:
 
-![](/pics/testme-add-return-value-passed.jpeg)
+![](pics/testme-add-return-value-passed.jpeg)
 
 Ok, sampai disini semoga kita dapat melihat bagaiman **testem** telah memudahkan kita dalam menggunakan jasmine. Kita dapat memperoleh hasil dari testing secara langsung dan otomatis tiap kali kode kita mengalami perubahan.
 
 Jangan lupa juga, bahwa **testem** juga melaporkan progress test kita pada console dimana command **testem** dijalankan:
 
-![](/pics/testem-test-progress-4tests.jpeg)
+![](pics/testem-test-progress-4tests.jpeg)
 
 ### Menstrukturkan Test Suite
 
@@ -241,7 +241,7 @@ Caranya adalah dengan menggunakan `describe`:
 
 Tampilan jasmine kita juga mengalami perubahan:
 
-![](/pics/testem-group.jpeg)
+![](pics/testem-group.jpeg)
 
 ### Matchers Lainnya
 
