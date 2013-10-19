@@ -10,7 +10,31 @@
 </head>
 <body>
 
-<h2>Mata-mata</h2>
+<div class="ui red vertical sidebar menu" style="display:block;margin-left: 0!important;">
+
+    <div class="item">
+        <h2>Belajar Jasmine</h2>
+        <div class="menu">
+            
+                <a href="/posts/1.html" class="item">Pengantar</a>
+            
+                <a href="/posts/2.html" class="item">Persiapan</a>
+            
+                <a href="/posts/3.html" class="item">Eksplorasi Jasmine</a>
+            
+                <a href="/posts/4.html" class="item">Mata mata</a>
+            
+                <a href="/posts/5.html" class="item">Pengujian Asynchronous</a>
+            
+                <a href="/posts/6.html" class="item">Jasmine Plugin</a>
+            
+        </div>
+    </div>
+
+</div>
+
+<div id="content">
+    <h2>Mata-mata</h2>
 <p>Mari kita membuat module untuk menghitung ukuran(magnitude) dari vector. Rumusnya adalah sebagai berikut:</p>
 <pre class="highlighted"><code class="matlab"><span class="function"><span class="keyword">function</span> <span class="title">mag</span><span class="params">( v )</span> {</span>
     <span class="keyword">return</span> <span class="transposed_variable">Math.</span><span class="built_in">sqrt</span>(<span class="transposed_variable">v.</span>x * <span class="transposed_variable">v.</span>x + <span class="transposed_variable">v.</span>y * <span class="transposed_variable">v.</span>y);
@@ -85,6 +109,7 @@
         expect(vector2d<span class="preprocessor">.dot</span><span class="preprocessor">.calls</span><span class="preprocessor">.length</span>)<span class="preprocessor">.toEqual</span>(<span class="number">3</span>)<span class="comment">;</span>
     })<span class="comment">;</span></code></pre>
 
+</div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.3.4/javascript/semantic.min.js"></script>
