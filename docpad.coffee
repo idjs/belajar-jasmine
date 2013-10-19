@@ -23,7 +23,7 @@ docpadConfig = {
 
             # The website description (for SEO)
             description: """
-                Unit test dapat membantu tidur kita lebih nyenyak
+                Agar tidur kita bisa lebih nyenyak
                 """
 
             # The website keywords (for SEO) separated by commas
