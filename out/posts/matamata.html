@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mata mata</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="/assets/style.css" /><link  rel="stylesheet" href="/assets/monokai.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.3.4/css/semantic.min.css">
+</head>
+<body>
+<div class="ui red vertical sidebar menu" style="display:block;margin-left: 0!important;">
+
+    <div class="item">
+        <b>Belajar Jasmine</b>
+        <div class="menu">
+            
+                <a href="/posts/async.html" class="item">Pengujian Asynchronous</a>
+            
+                <a href="/posts/matamata.html" class="item">Mata mata</a>
+            
+                <a href="/posts/pengantar.html" class="item">Pengantar</a>
+            
+                <a href="/posts/pengantarfungsi.html" class="item">Eksplorasi Jasmine</a>
+            
+                <a href="/posts/persiapan.html" class="item">Persiapan</a>
+            
+                <a href="/posts/plugin.html" class="item">Jasmine Plugin</a>
+            
+        </div>
+    </div>
+
+</div>
+
+<div id="content">
+    <h2>Mata-mata</h2>
+<p>Mari kita membuat module untuk menghitung ukuran(magnitude) dari vector. Rumusnya adalah sebagai berikut:</p>
+<pre><code>function mag( v ) {
+    return Math.sqrt(v.x * v.x + v.y * v.y);
+}</code></pre>
+<p>Ternyata, bagian <code>v.x * v.x + v.y * v.y</code> di atas dapat digunakan juga untuk menghitung <em>dot product</em> secara cepat dari 2 buat vector:</p>
+<pre><code>function dot( v1, v2 ) {
+    return v1.x * v2.x + v1.y * v2.y;
+}</code></pre>
+<p>Bagaimana bila kita manfaatkan metode <code>dot</code> di atas ketika kita hendak menghitung magnitude dari sebuah vector?</p>
+<pre><code>var vector2d = {
+    add: function( v1, v2 ){
+        return {x: v1.x + v2.x , y: v1.y + v2.y};
+    },
+
+    substract: function( v1, v2 ){
+        return {x: v1.x - v2.x , y: v1.y - v2.y};
+    },
+
+    dot: function( v1, v2 ) {
+        return v1.x * v2.x + v1.y * v2.y;
+    },
+
+    mag: function( v ) {
+        return Math.sqrt(this.dot(v, v));
+    }
+};</code></pre>
+<p>Mari kita buat test awal:</p>
+<pre><code>describe(&quot;Norm method&quot;, function() {
+
+    var v1, v2;
+
+    it(&quot;Should calculate the magnitude properly&quot;, function() {
+        var result = vector2d.mag({x: 3, y: -4});
+        expect(result).toEqual(5);
+    });
+});</code></pre>
+<p>Ok, sesuai dengan yang kita inginkan. Tetapi bagaimana bila kita ingin memeriksa bahwa fungsi <code>mag</code> memanggil fungsi <code>dot</code> dengan parameter yang benar? Disinilah saatnya kita menggunakan <strong>Spies</strong> atau mata-mata.</p>
+<p>Dengan <strong>Spies</strong> Kita dapat memantau bagaiman suatu fungsi dipanggil. Pada contoh berikut, kita memantau interaksi antara metode <code>mag</code> dengan metode <code>dot</code>.</p>
+<pre><code>    it(&quot;Should call dot method&quot;, function() {
+        // memasang mata-mata pada metode dot
+        spyOn(vector2d, &quot;dot&quot;);
+
+        // jalankan metode mag
+        vector2d.mag(v);
+
+        // memastikan bahwa metode dot benar dijalankan
+        expect(vector2d.dot).toHaveBeenCalled();
+    });
+
+    it(&quot;Should call dot method with the correct params&quot;, function() {
+        // memasang mata-mata pada metode dot
+        spyOn(vector2d, &quot;dot&quot;);
+
+        // jalankan metode mag
+        vector2d.mag(v);
+
+        // memastikan bahwa metode dot dipanggil dengan parameter
+        // vector yang benar
+        expect(vector2d.dot).toHaveBeenCalledWith({x: 3,y: -4}, {x: 3,y: -4});
+    });
+
+    it(&quot;Should track the number of calls to dot&quot;, function() {
+        // memasang mata-mata pada metode dot
+        spyOn(vector2d, &quot;dot&quot;);
+
+        // jalankan metode mag 3 kali
+        vector2d.mag(v);
+        vector2d.mag(v);
+        vector2d.mag(v);
+
+        // memastikan bahwa metode dot dipanggil 3 kali juga
+        expect(vector2d.dot.calls.length).toEqual(3);
+    });</code></pre>
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.3.4/javascript/semantic.min.js"></script>
+
+<script defer="defer"  src="/scripts/script.js"></script>
+</body>
+</html>
