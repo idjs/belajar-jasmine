@@ -19,6 +19,7 @@ Agar **testem** dapat mengenali kode yang sudah kita tulis, kita perlu memberita
 
 Jadi pertama, kita membuat sebuah berkas untuk menuliskan konfigurasi. Berkas tersebut bernama `testem.json` dan kita letakkan pada path `code/testem.json`. Isi dari berkas tersebut adalah:
 
+``` json
     {
         "framework": "jasmine",
         "src_files": [
@@ -27,6 +28,7 @@ Jadi pertama, kita membuat sebuah berkas untuk menuliskan konfigurasi. Berkas te
         ],
         "launch_in_dev": ["Firefox"]
     }
+```    
 
 Pada konfigurasi di atas, kita menentukan bahwa kita hendak menggunakan **jasmine** untuk testnya. Kita juga sudah menentukan dimana kode kita berada pada **properti** `src_files`. Konfigurasi `src_files` di atas menjelaskan bahwa kode yang perlu dipantau berada di dalam direktori `src` (beserta sub-direktorinya), dan memiliki ekstensi `js`. Kita juga meminta **testmen** untuk memantau kode yang berada di dalam direktori `specs` (beserta sub-direktorinya), dan berkasnya memiliki akhiran `Spec.js`.
 

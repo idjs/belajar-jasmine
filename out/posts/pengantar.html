@@ -35,19 +35,17 @@
 <div id="content">
     <h2>Pengantar</h2>
 <p>Misal, kita memiliki fungsi menambahkan dua buah vektor sebagai berikut:</p>
-<pre><code class="lang-javascript">
-    function add(v1, v2){
-        return {x: v1.x + v2.x, y: v1.y + v2.y};
+<pre class="highlighted"><code class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(v1, v2)</span>{</span>
+        <span class="keyword">return</span> {x: v1.x + v2.x, y: v1.y + v2.y};
     }</code></pre>
 <p>Nah, bagaimana kita memeriksa bahwa fungsi di atas itu benar? Salah satu cara adalah dengan menampilkan hasilnya menggunakan <code>console.log</code>:</p>
-<pre><code class="lang-javascript">
-    var v1 = {
-            x: 10,
-            y: 5
+<pre class="highlighted"><code class="javascript">    <span class="keyword">var</span> v1 = {
+            x: <span class="number">10</span>,
+            y: <span class="number">5</span>
         },
         v2 = {
-            x: 5,
-            y: 10
+            x: <span class="number">5</span>,
+            y: <span class="number">10</span>
         },
         result;
 
@@ -59,8 +57,7 @@
 <h2>Jasmine</h2>
 <p><a href="http://pivotal.github.io/jasmine/">Jasmine</a> adalah sebuah alat yang memberikan kemudahan kepada kita untuk melakukan testing secara otomatis. Kita dapat memeriksa fungsi, module, alur, dsb dari code yang telah kita ketikkan.</p>
 <p>Mengambil contoh di atas, kita dapat menguji kebenaran dari metode <code>add</code> dengan cara sebagai berikut:</p>
-<pre><code class="lang-javascript">
-    expect(add(v1, v2)).toEqual({x: 15, y: 15});</code></pre>
+<pre class="highlighted"><code class="javascript">    expect(add(v1, v2)).toEqual({x: <span class="number">15</span>, y: <span class="number">15</span>});</code></pre>
 <p>Jangan khawatir mengenai sintaks <code>expect</code> dan <code>toEqual</code> dari contoh di atas. Kita akan mempelajari sintaks-sintaks yang dimiliki oleh Jasmine sesegera mungkin. Tetapi inti dari contoh di atas adalah, daripada kita menguji fungsi <code>add</code> secara manual, kita dapat mengotomatiskannya.</p>
 <p>Fungsi <code>add</code> akan bernilai benar bila hasil penambahan dari vektor <code>v1</code> dan <code>v2</code> menghasilkan sebuah objek dengan properti <code>x</code> bernilai 15, dan properti <code>y</code> bernilai 15. Maka kita dapat menguji hal ini dengan memastikan bahwa ketika <code>v1</code> dan <code>v2</code> dijumlahkan (berdasarkan contoh di atas), hasil yang dikembalikan memang sesuai dengan hasil yang kita harapkan.</p>
 

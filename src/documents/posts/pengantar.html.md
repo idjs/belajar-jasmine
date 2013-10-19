@@ -8,17 +8,14 @@ layout: base
 Misal, kita memiliki fungsi menambahkan dua buah vektor sebagai berikut:
 
 ``` javascript
-
     function add(v1, v2){
         return {x: v1.x + v2.x, y: v1.y + v2.y};
     }
-
 ```
 
 Nah, bagaimana kita memeriksa bahwa fungsi di atas itu benar? Salah satu cara adalah dengan menampilkan hasilnya menggunakan `console.log`:
 
 ``` javascript
-
     var v1 = {
             x: 10,
             y: 5
@@ -31,7 +28,6 @@ Nah, bagaimana kita memeriksa bahwa fungsi di atas itu benar? Salah satu cara ad
 
     result = add(v1, v2);
     console.log(result);
-
 ```
 
 Metode `console.log()` akan menampilkan hasil dari penjumlahan vektor `v1` dengan `v2`. Kita dapat melihat nilainya pada **developer tool** dari browser yang kita pakai.
@@ -47,9 +43,7 @@ Inilah mengapa kita perlu suatu pendekatan yang lebih otomatis dan lebih efektif
 Mengambil contoh di atas, kita dapat menguji kebenaran dari metode `add` dengan cara sebagai berikut:
 
 ``` javascript
-
     expect(add(v1, v2)).toEqual({x: 15, y: 15});
-
 ```    
 
 Jangan khawatir mengenai sintaks `expect` dan `toEqual` dari contoh di atas. Kita akan mempelajari sintaks-sintaks yang dimiliki oleh Jasmine sesegera mungkin. Tetapi inti dari contoh di atas adalah, daripada kita menguji fungsi `add` secara manual, kita dapat mengotomatiskannya.

@@ -15,17 +15,21 @@ Karena kami telah menetapkan bahwa kami ingin menguji kode kami pada browser Fir
 
 Kita belum menuliskan kode apapun. Sehingga belum ada kode yang dapat dites. Mari kita tuliskan test pertama kita. Buatlah sebuah berkas pada alamat `code/specs/vector2dSpec.js`. Pada berkas tersebut, mari kita tuliskan kode test pertama kita.
 
+``` javascript
     describe("Vector2d", function(){
         it("Should have an add property", function(){
             expect(vector2d.add).toBeDefined();
         });
     });
+```
 
 Jadi, `describe` menunjukkan sebuah **test suite**. **Test Suite** ini semacam kelompok besar dari sebuah test. Jadi, pada contoh di atas, kita memiliki sebuah **test suite** mengenai module `Vector2d`. Kita bisa menentukan nama lain dari **test suite** tersebut. Misalnya:
 
+``` javascript
     describe("Uji coba Vector2d", function(){
 
     });
+```
 
 Di dalam sebuah **test suite**, kita memiliki **specs**. Disinilah kode testing kita tuliskan. Pada contoh di atas, kita memiliki sebuah **specs**, dimana kita mengharapkan bahwa sebuah objek `vector2d` memiliki sebuah properti `add`. Bila kita menyimpan kode di atas, maka tampilan dari browser kita sudah berubah:
 
@@ -37,6 +41,7 @@ Mari kita lihat peringatannya:
 
 Jasmine memberitahukan kepada kita bahwa objek vector2d belum terdefinisikan. Ini sudah jelas, kita belum menuliskan kode vector2d yang hendak kita test. Ayo kita tulis module tersebut. Kita simpan module vector2d pada alamat `code/src/vector2d.js`:
 
+```
     (function(global){
         var vector2d = {
 
@@ -44,6 +49,7 @@ Jasmine memberitahukan kepada kita bahwa objek vector2d belum terdefinisikan. In
 
         global.vector2d = vector2d;
     }(window));
+```
 
 Pada code di atas, kita memperkenalkan objek vector2d pada **global objek**. Pendekatan ini hanyalah contoh. Pada project sebenarnya, bisa jadi kita menggunakan suatu **namespace** tertentu, ataupun menggunakan mekanisme module lainnya. Tetapi pada contoh ini, tujuan utamanya adalah bagaimana agar objek `vector2d` dapat dikenali oleh kode test kita.
 
@@ -59,6 +65,7 @@ Hampir mirip bukan? Namun kode test di atas membangkitkan error karena `vector2d
 
 Ayo kita tambahkan properti add pada objek `vector2d`:
 
+``` javascript
     (function(global){
         var vector2d = {
             add: ""
@@ -66,6 +73,7 @@ Ayo kita tambahkan properti add pada objek `vector2d`:
 
         global.vector2d = vector2d;
     }(window));
+```
 
 Ketika kode di atas kita simpan, kita memperoleh tanda bahwa kode module `vector2d` sudah lolos uji coba:
 
@@ -75,6 +83,7 @@ Sekarang mari kita buat kode test baru. Seiring kita membuat test, kita juga aka
 
 Misalnya kita ingin memeriksa bahwa `add` pada `vector2d` adalah sebuah `function`. Maka, kode testnya adalah sebagai berikut:
 
+``` javascript
     describe("Vector2d", function(){
         it("Should have an add property", function(){
             expect(vector2d.add).toBeDefined();
@@ -84,6 +93,7 @@ Misalnya kita ingin memeriksa bahwa `add` pada `vector2d` adalah sebuah `functio
             expect(typeof vector2d.add).toEqual("function");
         });
     });
+```
 
 Dan ketika kita simpan kode di atas, kita akan memperoleh tanda merah:
 
@@ -91,6 +101,7 @@ Dan ketika kita simpan kode di atas, kita akan memperoleh tanda merah:
 
 Ok, masalahnya adalah, properti `add` pada objek `vector2d` adalah sebuah string, bukan fungsi. Jadi jelaslah jasmine membangkitkan kode di atas. Mari kita perbaiki module `vector2d` kita:
 
+``` javascript
     (function(global){
         var vector2d = {
             add: function(){
@@ -100,6 +111,7 @@ Ok, masalahnya adalah, properti `add` pada objek `vector2d` adalah sebuah string
 
         global.vector2d = vector2d;
     }(window));
+```
 
 Dan ketika kita simpan, warna hijau muncul kembali. :D
 
@@ -111,6 +123,7 @@ Sekarang saatnya kita menguji apakah `vector2d.add()` akan mengembalikan jawaban
 
 Jadi, misal:
 
+``` javascript
     var v1 = {
             x: 20,
             y: 30
@@ -119,17 +132,20 @@ Jadi, misal:
             x: 5,
             y: 1
         };
+```
 
 Maka, bila kedua objek di atas dijumlahkan, seharusnya hasilnya adalah sebuah objek dengan properti `x` bernilai `25`, dan `y` bernilai `31`.
 
 Untuk memastikan hal tersebut, mari kita buat testnya terlebih dahulu. Kita akan melakukannya secara bertahap. Pertama, kita periksa bahwa nilai yang dikembalikan oleh metode `add` memiliki properti `x` dan `y`:
 
+``` javascript
     it("Add method should return an object with property x and y", function(){
         var v1 = { x: 20, y: 30},
             v2 = { x: 5, y: 1};
 
         expect(vector2d.add(v1, v2).hasOwnProperty("x")).toBeTruthy();
     });
+```
 
 Apa yang terjadi ketika kita menyimpan kode test di atas?
 
@@ -137,11 +153,13 @@ Apa yang terjadi ketika kita menyimpan kode test di atas?
 
 Ok, kita memang belum mengembalikan apapun ketika metode `add` dijalankan (perhatikan **TypeError: vector2d.add(...) is undefined**). Mari kita buat kode secukupnya agar kode test kita berwarna hijau:
 
+``` javascript
     var vector2d = {
         add: function(){
             return {x: 0, y: 0};
         }
     };
+```
 
 Hasilnya? Hijau.
 
@@ -149,12 +167,14 @@ Hasilnya? Hijau.
 
 Sekarang saatnya memeriksa apakah kembalian dari metode `add` bernilai benar.
 
+``` javascript
     it("Add method should return the correct answer", function(){
         var v1 = { x: 20, y: 30},
             v2 = { x: 5, y: 1};
 
         expect(vector2d.add(v1, v2)).toEqual({x: 25, y: 31});
     });
+```
 
 Namun, kode test di atas akan menghasilkan:
 
@@ -164,11 +184,13 @@ Perhatikan bagaimana jasmine memberitahukan kepada kita, kesalahan yang berhasil
 
 Saatnya memperbaiki metode `add`:
 
+``` javascript
     var vector2d = {
         add: function(v1, v2){
             return {x: v1.x + v2.x , y: v1.y + v2.y};
         }
     };
+```
 
 Dan, yap, hasilnya hijau:
 
@@ -188,6 +210,7 @@ Misal, pada kode test yang sudah ada saat ini, kita mengetahui bahwa kita sedang
 
 Caranya adalah dengan menggunakan `describe`:
 
+``` javascript
     describe("Vector2d", function(){
         describe("Add method", function(){
             it("Should have an add property", function(){
@@ -213,6 +236,7 @@ Caranya adalah dengan menggunakan `describe`:
             });
         });
     });
+```
 
 Tampilan jasmine kita juga mengalami perubahan:
 
@@ -226,30 +250,39 @@ Metode seperti `toEqual`, `toBeDefined`, `toBeTruthy` yang sudah kami perlihatka
 Beberepa **matcher** lain yang disediakan oleh Jasmine adalah sebagai berikut:
 
 **toBe**
-    
+
+``` javascript    
     expect(true).toBe(true);
     expect(false).not.toBe(true);
+```
 
 **toMatch** : pemeriksaan berdasarkan Regular Expression
 
+``` javascript
     expect(someString).toMatch(/foo/);
     expect(someString).not.toMatch(/baar/);
+```
 
 **toBeNull**
 
+``` javascript
     expect(null).toBeNull();
+```
 
 **toContain**
 
+``` javascript
     var kota = ["Surabaya", "Malang", "Jakarta"];
 
     expect(kota).toContain("Malang");
     expect(kota).not.toContain("Bandung");
+```    
 
 ### beforeEach dan afterEach
 
 Bila kita ingin menjalankan suatu metode atau langkah-langkah tertentu sebelum setiap **spec** dijalankan, kita dapat memanfaatkan `beforeEach`. Sementara itu, bila kita ingin menjalankan suatu langkah tertentu setelah tiap **specs** selesai dijalankan, kita dapat menggunakan `afterEach`. Contoh:
 
+``` javascript
     describe("Substract method", function(){
         var v1, v2;
 
@@ -286,6 +319,7 @@ Bila kita ingin menjalankan suatu metode atau langkah-langkah tertentu sebelum s
             expect(result.y).toBeCloseTo(26.85, 1);
         });
     });
+```
 
 Pada contoh di atas, sebelum tiap **spec** dijalankan, kita memberikan nilai kepada variabel `v1` dan `v2`. Tiap kali **specs** dijalankan, `v1` dan `v2` bernilai sesuai dengan nilai yang diberikan ketika `beforeEach` dijalankan.
 

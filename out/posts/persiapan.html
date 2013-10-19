@@ -41,14 +41,14 @@
 <p>Contoh dari kode yang akan kita buat pada artikel ini dapat pembaca lihat di dalam folder <code>code</code> pada repository ini. Kami dengan sengaja menstrukturkan kode berdasarkan direktori <code>src</code> dan <code>specs</code>. Seluruh kode aplikasi kami letakkan di dalam direktori <code>src</code>, dan seluruh kode test kami letakkan di dalam direktori <code>specs</code>.</p>
 <p>Agar <strong>testem</strong> dapat mengenali kode yang sudah kita tulis, kita perlu memberitahu <strong>testem</strong> mengenai struktur direktori kita. Kami mengasumsikan bahwa direktori utama dari project ini adalah direktori <code>code</code>.</p>
 <p>Jadi pertama, kita membuat sebuah berkas untuk menuliskan konfigurasi. Berkas tersebut bernama <code>testem.json</code> dan kita letakkan pada path <code>code/testem.json</code>. Isi dari berkas tersebut adalah:</p>
-<pre><code>{
-    &quot;framework&quot;: &quot;jasmine&quot;,
-    &quot;src_files&quot;: [
-        &quot;src/**/*.js&quot;,
-        &quot;specs/**/*Spec.js&quot;
-    ],
-    &quot;launch_in_dev&quot;: [&quot;Firefox&quot;]
-}</code></pre>
+<pre class="highlighted"><code class="json">    {
+        "<span class="attribute">framework</span>": <span class="value"><span class="string">"jasmine"</span></span>,
+        "<span class="attribute">src_files</span>": <span class="value">[
+            <span class="string">"src/**/*.js"</span>,
+            <span class="string">"specs/**/*Spec.js"</span>
+        ]</span>,
+        "<span class="attribute">launch_in_dev</span>": <span class="value">[<span class="string">"Firefox"</span>]
+    }</span></code></pre>
 <p>Pada konfigurasi di atas, kita menentukan bahwa kita hendak menggunakan <strong>jasmine</strong> untuk testnya. Kita juga sudah menentukan dimana kode kita berada pada <strong>properti</strong> <code>src_files</code>. Konfigurasi <code>src_files</code> di atas menjelaskan bahwa kode yang perlu dipantau berada di dalam direktori <code>src</code> (beserta sub-direktorinya), dan memiliki ekstensi <code>js</code>. Kita juga meminta <strong>testmen</strong> untuk memantau kode yang berada di dalam direktori <code>specs</code> (beserta sub-direktorinya), dan berkasnya memiliki akhiran <code>Spec.js</code>.</p>
 <p>Kemudian kita menentukan bahwa kita hendak menjalankan test ini pada browser Firefox. Pembaca dapat menggunakan browser yang berbeda. <strong>Testem</strong> sudah mendukung banyak jenis browser. <strong>Testem</strong> juga dapat mengenali browser apa saja yang sudah terpasang pada sistem pembaca. Untuk mengetahuinya, silahkan jalankan perintah berikut pada console:</p>
 <blockquote>
