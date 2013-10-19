@@ -18,7 +18,7 @@
     <%- @getBlock('meta').toHTML() %>
 
     <!-- DocPad Styles + Our Own -->
-    <%- @getBlock('styles').add(@site.styles).toHTML() %>
+    <%- @getBlock('styles').add(@getUrls(@site.styles)).toHTML() %>
 
     <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.3.0/base-min.css&pure/0.3.0/grids-min.css&pure/0.3.0/buttons-min.css&pure/0.3.0/menus-min.css">
 </head>
@@ -35,7 +35,7 @@
                 <ul class="nav-list">
                     <% for doc in @getCollection("posts").toJSON(): %>
                     <li class="nav-item">
-                        <a href="<%= doc.url %>" class="item"><%= doc.title %></a>        
+                        <a href="<%= @getUrl(doc) %>" class="item"><%= doc.title %></a>        
                     </li>
                     <% end %>
                 </ul>

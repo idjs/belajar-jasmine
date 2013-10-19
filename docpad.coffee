@@ -72,6 +72,34 @@ docpadConfig = {
         getPreparedKeywords: ->
             # Merge the document keywords with the site keywords
             @site.keywords.concat(@document.keywords or []).join(', ')
+
+        getUrl: (document) ->
+            return @site.url + (document.url or document.get?('url'))
+
+        getUrls: (_, site) ->
+            site = site || @site.url
+
+            if (typeof _ == "string")
+                if (_[0] == "/" && _[1] != "/")
+                    return site+_
+                return _
+
+            if (typeof _ == "object")
+                if (_.url)
+                    return @getUrls(_.url,site)
+                if (_.map)
+                    _getUrls = arguments.callee
+                    return _.map((d) ->
+                        return _getUrls(d,site)
+                    )
+
+            return _
+
+    environments:
+        development:
+            templateData:
+                site:
+                    url: 'http://localhost:9778'
 }
 
 # Export the DocPad Configuration
