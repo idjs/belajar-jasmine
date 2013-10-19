@@ -12,8 +12,8 @@
             return {x: v1.x * v2.x, y: v1.y * v2.y};
         },
 
-        distance: function( v1, v2 ) {
-            return {};
+        norm: function( v ) {
+            return Math.sqrt(v.x * v.x + v.y * v.y);
         }
     };
 

@@ -55,4 +55,14 @@ describe("Vector2d", function(){
             expect(result.y).toBeCloseTo(26.85, 1);
         });
     });
+
+    describe("Norm method", function() {
+
+        var v1, v2;
+
+        it("Should calculate the norm properly", function() {
+            var result = vector2d.norm({x: 3, y: -4});
+            expect(result).toEqual(5);
+        });
+    });
 });
