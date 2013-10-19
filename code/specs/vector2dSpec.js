@@ -80,7 +80,28 @@ describe("Vector2d", function(){
         });
 
         it("Should call dot method with the correct params", function() {
+            // memasang mata-mata pada metode dot
+            spyOn(vector2d, "dot");
 
+            // jalankan metode mag
+            vector2d.mag(v);
+
+            // memastikan bahwa metode dot dipanggil dengan parameter
+            // vector yang benar
+            expect(vector2d.dot).toHaveBeenCalledWith({x: 3,y: -4}, {x: 3,y: -4});
+        });
+
+        it("Should track the number of calls to dot", function() {
+            // memasang mata-mata pada metode dot
+            spyOn(vector2d, "dot");
+
+            // jalankan metode mag 3 kali
+            vector2d.mag(v);
+            vector2d.mag(v);
+            vector2d.mag(v);
+
+            // memastikan bahwa metode dot dipanggil 3 kali juga
+            expect(vector2d.dot.calls.length).toEqual(3);
         });
     });
 });
