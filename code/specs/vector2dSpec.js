@@ -56,13 +56,31 @@ describe("Vector2d", function(){
         });
     });
 
-    describe("Norm method", function() {
+    describe("Mag method", function() {
 
-        var v1, v2;
+        var v;
+
+        beforeEach(function() {
+            v = {x: 3, y: -4};
+        });
 
         it("Should calculate the magnitude properly", function() {
-            var result = vector2d.mag({x: 3, y: -4});
+            var result = vector2d.mag(v);
             expect(result).toEqual(5);
+        });
+
+        it("Should call dot method", function() {
+            // memasang mata-mata pada metode dot
+            spyOn(vector2d, "dot");
+
+            // jalankan metode mag
+            vector2d.mag(v);
+
+            expect(vector2d.dot).toHaveBeenCalled();
+        });
+
+        it("Should call dot method with the correct params", function() {
+
         });
     });
 });

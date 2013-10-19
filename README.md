@@ -400,6 +400,32 @@ Bagaimana bila kita manfaatkan metode `dot` di atas ketika kita hendak menghitun
         }
     };
 
+Mari kita buat test awal:
+
+    describe("Norm method", function() {
+
+        var v1, v2;
+
+        it("Should calculate the magnitude properly", function() {
+            var result = vector2d.mag({x: 3, y: -4});
+            expect(result).toEqual(5);
+        });
+    });
+
+Ok, sesuai dengan yang kita inginkan. Tetapi bagaimana bila kita ingin memeriksa bahwa fungsi `mag` memanggil fungsi `dot` dengan parameter yang benar? Disinilah saatnya kita menggunakan **Spies** atau mata-mata.
+
+Dengan **Spies** Kita dapat memantau bagaiman suatu fungsi dipanggil.
+
+    it("Should call dot method", function() {
+        // memasang mata-mata pada metode dot
+        spyOn(vector2d, "dot");
+
+        // jalankan metode mag
+        vector2d.mag(v);
+
+        expect(vector2d.dot).toHaveBeenCalled();
+    });
+
 TODO
 
 ## Eksplorasi fungsi pengujian asynchronous
