@@ -1,6 +1,7 @@
 ---
 title: Eksplorasi Jasmine
 layout: base
+date: 2013-10-03
 ---
 
 ## Eksplorasi fungsi-fungsi Jasmine

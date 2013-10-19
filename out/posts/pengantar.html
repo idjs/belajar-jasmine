@@ -9,31 +9,8 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.3.4/css/semantic.min.css">
 </head>
 <body>
-<div class="ui red vertical sidebar menu" style="display:block;margin-left: 0!important;">
 
-    <div class="item">
-        <b>Belajar Jasmine</b>
-        <div class="menu">
-            
-                <a href="/posts/async.html" class="item">Pengujian Asynchronous</a>
-            
-                <a href="/posts/matamata.html" class="item">Mata mata</a>
-            
-                <a href="/posts/pengantar.html" class="item">Pengantar</a>
-            
-                <a href="/posts/pengantarfungsi.html" class="item">Eksplorasi Jasmine</a>
-            
-                <a href="/posts/persiapan.html" class="item">Persiapan</a>
-            
-                <a href="/posts/plugin.html" class="item">Jasmine Plugin</a>
-            
-        </div>
-    </div>
-
-</div>
-
-<div id="content">
-    <h2>Pengantar</h2>
+<h2>Pengantar</h2>
 <p>Misal, kita memiliki fungsi menambahkan dua buah vektor sebagai berikut:</p>
 <pre class="highlighted"><code class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(v1, v2)</span>{</span>
         <span class="keyword">return</span> {x: v1.x + v2.x, y: v1.y + v2.y};
@@ -61,7 +38,6 @@
 <p>Jangan khawatir mengenai sintaks <code>expect</code> dan <code>toEqual</code> dari contoh di atas. Kita akan mempelajari sintaks-sintaks yang dimiliki oleh Jasmine sesegera mungkin. Tetapi inti dari contoh di atas adalah, daripada kita menguji fungsi <code>add</code> secara manual, kita dapat mengotomatiskannya.</p>
 <p>Fungsi <code>add</code> akan bernilai benar bila hasil penambahan dari vektor <code>v1</code> dan <code>v2</code> menghasilkan sebuah objek dengan properti <code>x</code> bernilai 15, dan properti <code>y</code> bernilai 15. Maka kita dapat menguji hal ini dengan memastikan bahwa ketika <code>v1</code> dan <code>v2</code> dijumlahkan (berdasarkan contoh di atas), hasil yang dikembalikan memang sesuai dengan hasil yang kita harapkan.</p>
 
-</div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.3.4/javascript/semantic.min.js"></script>

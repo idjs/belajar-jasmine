@@ -1,6 +1,7 @@
 ---
 title: Persiapan
 layout: base
+date: 2013-10-02
 ---
 
 ## Menggunakan Jasmine dengan bantuan Testem

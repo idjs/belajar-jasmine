@@ -9,22 +9,8 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.3.4/css/semantic.min.css">
 </head>
 <body>
-<div class="ui red vertical sidebar menu" style="display:block;margin-left: 0!important;">
 
-    <div class="item">
-        <b>Belajar Jasmine</b>
-        <div class="menu">
-            <% for doc in @getFilesAtPath("posts").toJSON(): %>
-                <a href="/<%= doc.relativeOutPath %>" class="item"><%= doc.title %></a>
-            <% end %>
-        </div>
-    </div>
-
-</div>
-
-<div id="content">
-    <%- @content %>
-</div>
+<%- @content %>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.3.4/javascript/semantic.min.js"></script>

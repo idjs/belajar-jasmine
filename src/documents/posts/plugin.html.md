@@ -1,6 +1,7 @@
 ---
 title: Jasmine Plugin
 layout: base
+date: 2013-10-06
 ---
 
 Beberapa Plugin yang dapat memudahkan penggunaan Jasmine:

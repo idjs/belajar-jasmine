@@ -1,6 +1,7 @@
 ---
 title: Mata mata
 layout: base
+date: 2013-10-04
 ---
 
 ## Mata-mata
