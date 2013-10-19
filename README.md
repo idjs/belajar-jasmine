@@ -368,7 +368,37 @@ Ketika tiap **specs** sudah dijalankan, kita me-null-kan kembali `v1` dan `v2`.
 
 ## Mata-mata
 
-Mari kita buat sebuah module untuk menghitung jarak antara dua buah vector.
+Mari kita membuat module untuk menghitung ukuran(magnitude) dari vector. Rumusnya adalah sebagai berikut:
+
+    function mag( v ) {
+        return Math.sqrt(v.x * v.x + v.y * v.y);
+    }
+
+Tetapi, bagian `v.x * v.x + v.y * v.y` di atas dapat digunakan juga untuk menghitung *dot product* secara cepat dari 2 buat vector:
+
+    function dot( v1, v2 ) {
+        return v1.x * v2.x + v1.y * v2.y;
+    }
+
+Bagaimana bila kita manfaatkan metode `dot` di atas ketika kita hendak menghitung magnitude dari sebuah vector?
+
+    var vector2d = {
+        add: function( v1, v2 ){
+            return {x: v1.x + v2.x , y: v1.y + v2.y};
+        },
+
+        substract: function( v1, v2 ){
+            return {x: v1.x - v2.x , y: v1.y - v2.y};
+        },
+
+        dot: function( v1, v2 ) {
+            return v1.x * v2.x + v1.y * v2.y;
+        },
+
+        mag: function( v ) {
+            return Math.sqrt(this.dot(v, v));
+        }
+    };
 
 TODO
 

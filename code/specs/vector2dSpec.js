@@ -60,8 +60,8 @@ describe("Vector2d", function(){
 
         var v1, v2;
 
-        it("Should calculate the norm properly", function() {
-            var result = vector2d.norm({x: 3, y: -4});
+        it("Should calculate the magnitude properly", function() {
+            var result = vector2d.mag({x: 3, y: -4});
             expect(result).toEqual(5);
         });
     });
