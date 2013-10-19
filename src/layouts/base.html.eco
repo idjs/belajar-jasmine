@@ -33,9 +33,9 @@
             </hgroup>
             <nav class="nav">
                 <ul class="nav-list">
-                    <% for doc in @getFilesAtPath("posts").toJSON(): %>
+                    <% for doc in @getCollection("posts").toJSON(): %>
                     <li class="nav-item">
-                        <a href="<%= doc.relativeOutPath %>" class="item"><%= doc.title %></a>        
+                        <a href="<%= doc.url %>" class="item"><%= doc.title %></a>        
                     </li>
                     <% end %>
                 </ul>

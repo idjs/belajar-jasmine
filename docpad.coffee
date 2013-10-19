@@ -3,6 +3,12 @@
 
 # Define the DocPad Configuration
 docpadConfig = {
+    collections:
+        pages: ->
+            @getCollection("html").findAllLive({isPage:true})
+
+        posts: ->
+            @getCollection("documents").findAllLive({relativeOutDirPath:'posts'})
 	# =================================
     # Template Data
     # These are variables that will be accessible via our templates
@@ -37,14 +43,11 @@ docpadConfig = {
             # The website author's email
             email: "keripix@gmail.com"
 
-            github: "http://github.com/keripix"
-
             # The website's styles
             styles: [
-                'assets/monokai.css',
-                'assets/style.css'
+                '/styles/monokai.css',
+                '/styles/style.css'
             ]
-
 
         # -----------------------------
         # Helper Functions

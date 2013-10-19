@@ -1,7 +1,7 @@
 ---
 title: Eksplorasi Jasmine
 layout: base
-date: 2013-10-03
+isPage: true
 ---
 
 ## Eksplorasi fungsi-fungsi Jasmine

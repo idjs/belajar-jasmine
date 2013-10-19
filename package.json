@@ -11,10 +11,12 @@
     "docpad-plugin-marked": "~2.1.1",
     "docpad-plugin-eco": "~2.0.2",
     "docpad-plugin-ghpages": "~2.4.0",
-    "docpad-plugin-highlightjs": "~2.1.8"
+    "docpad-plugin-highlightjs": "~2.1.8",
+    "docpad-plugin-livereload": "~2.5.3"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "start": "node_modules/docpad/bin/docpad-server"
+    "start": "node_modules/docpad/bin/docpad-server",
+    "publish": "docpad deploy-ghpages --env static"
   }
 }

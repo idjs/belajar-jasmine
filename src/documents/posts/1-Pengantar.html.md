@@ -1,7 +1,7 @@
 ---
 title: Pengantar
 layout: base
-date: 2013-10-01
+isPage: true
 ---
 
 ## Pengantar
