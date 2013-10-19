@@ -35,7 +35,7 @@ Pada konfigurasi di atas, kita menentukan bahwa kita hendak menggunakan **jasmin
 
 Kemudian kita menentukan bahwa kita hendak menjalankan test ini pada browser Firefox. Pembaca dapat menggunakan browser yang berbeda. **Testem** sudah mendukung banyak jenis browser. **Testem** juga dapat mengenali browser apa saja yang sudah terpasang pada sistem pembaca. Untuk mengetahuinya, silahkan jalankan perintah berikut pada console:
 
-> testem launchers
+    testem launchers
 
 Pada sistem kami, perintah di atas menghasilkan jawaban berikut:
 

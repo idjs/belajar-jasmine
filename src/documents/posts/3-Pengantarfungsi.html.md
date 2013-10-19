@@ -8,7 +8,7 @@ date: 2013-10-03
 
 Mari kita jalankan **testem** dengan mengetikkan perintah di bawah ini pada console:
 
-> testem
+    testem
 
 Karena kami telah menetapkan bahwa kami ingin menguji kode kami pada browser Firefox, maka **testem** secara otomatis akan menjalankan Firefox. Hasilnya adalah sebagai berikut:
 

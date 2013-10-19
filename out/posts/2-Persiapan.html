@@ -16,17 +16,17 @@
         <h2>Belajar Jasmine</h2>
         <div class="menu">
             
-                <a href="/posts/1.html" class="item">Pengantar</a>
+                <a href="/posts/1-Pengantar.html" class="item">Pengantar</a>
             
-                <a href="/posts/2.html" class="item">Persiapan</a>
+                <a href="/posts/2-Persiapan.html" class="item">Persiapan</a>
             
-                <a href="/posts/3.html" class="item">Eksplorasi Jasmine</a>
+                <a href="/posts/3-Pengantarfungsi.html" class="item">Eksplorasi Jasmine</a>
             
-                <a href="/posts/4.html" class="item">Mata mata</a>
+                <a href="/posts/4-Matamata.html" class="item">Mata mata</a>
             
-                <a href="/posts/5.html" class="item">Pengujian Asynchronous</a>
+                <a href="/posts/5-Async.html" class="item">Pengujian Asynchronous</a>
             
-                <a href="/posts/6.html" class="item">Jasmine Plugin</a>
+                <a href="/posts/6-Plugin.html" class="item">Jasmine Plugin</a>
             
         </div>
     </div>
@@ -52,9 +52,7 @@
     }</span></code></pre>
 <p>Pada konfigurasi di atas, kita menentukan bahwa kita hendak menggunakan <strong>jasmine</strong> untuk testnya. Kita juga sudah menentukan dimana kode kita berada pada <strong>properti</strong> <code>src_files</code>. Konfigurasi <code>src_files</code> di atas menjelaskan bahwa kode yang perlu dipantau berada di dalam direktori <code>src</code> (beserta sub-direktorinya), dan memiliki ekstensi <code>js</code>. Kita juga meminta <strong>testmen</strong> untuk memantau kode yang berada di dalam direktori <code>specs</code> (beserta sub-direktorinya), dan berkasnya memiliki akhiran <code>Spec.js</code>.</p>
 <p>Kemudian kita menentukan bahwa kita hendak menjalankan test ini pada browser Firefox. Pembaca dapat menggunakan browser yang berbeda. <strong>Testem</strong> sudah mendukung banyak jenis browser. <strong>Testem</strong> juga dapat mengenali browser apa saja yang sudah terpasang pada sistem pembaca. Untuk mengetahuinya, silahkan jalankan perintah berikut pada console:</p>
-<blockquote>
-<p>testem launchers</p>
-</blockquote>
+<pre class="highlighted"><code class="nginx"><span class="title">testem</span> launchers</code></pre>
 <p>Pada sistem kami, perintah di atas menghasilkan jawaban berikut:</p>
 <p><img src="pics/testem-launchers.jpeg" alt=""></p>
 <p>Dan pembaca dapat memilih daftar browser yang sudah dideteksi oleh <strong>testem</strong>, kemudian menuliskannya pada properti <code>launch_in_dev</code>.</p>
