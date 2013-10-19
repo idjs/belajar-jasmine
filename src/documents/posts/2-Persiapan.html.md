@@ -39,6 +39,6 @@ Kemudian kita menentukan bahwa kita hendak menjalankan test ini pada browser Fir
 
 Pada sistem kami, perintah di atas menghasilkan jawaban berikut:
 
-![](pics/testem-launchers.jpeg)
+![](./../pics/testem-launchers.jpeg)
 
 Dan pembaca dapat memilih daftar browser yang sudah dideteksi oleh **testem**, kemudian menuliskannya pada properti `launch_in_dev`.

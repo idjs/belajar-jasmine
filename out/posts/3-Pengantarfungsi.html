@@ -72,7 +72,7 @@
 <p>Mari kita jalankan <strong>testem</strong> dengan mengetikkan perintah di bawah ini pada console:</p>
 <pre class="highlighted"><code class="http"><span class="attribute">testem</code></pre>
 <p>Karena kami telah menetapkan bahwa kami ingin menguji kode kami pada browser Firefox, maka <strong>testem</strong> secara otomatis akan menjalankan Firefox. Hasilnya adalah sebagai berikut:</p>
-<p><img src="pics/testem-firefox.jpeg" alt=""></p>
+<p><img src="./../pics/testem-firefox.jpeg" alt=""></p>
 <p>Kita belum menuliskan kode apapun. Sehingga belum ada kode yang dapat dites. Mari kita tuliskan test pertama kita. Buatlah sebuah berkas pada alamat <code>code/specs/vector2dSpec.js</code>. Pada berkas tersebut, mari kita tuliskan kode test pertama kita.</p>
 <pre class="highlighted"><code class="javascript">    describe(<span class="string">"Vector2d"</span>, <span class="keyword">function</span>(){
         it(<span class="string">"Should have an add property"</span>, <span class="keyword">function</span>(){
@@ -84,7 +84,7 @@
 
     });</code></pre>
 <p>Di dalam sebuah <strong>test suite</strong>, kita memiliki <strong>specs</strong>. Disinilah kode testing kita tuliskan. Pada contoh di atas, kita memiliki sebuah <strong>specs</strong>, dimana kita mengharapkan bahwa sebuah objek <code>vector2d</code> memiliki sebuah properti <code>add</code>. Bila kita menyimpan kode di atas, maka tampilan dari browser kita sudah berubah:</p>
-<p><img src="pics/testem-ontest.jpeg" alt=""></p>
+<p><img src="./../pics/testem-ontest.jpeg" alt=""></p>
 <p>Mari kita lihat peringatannya:</p>
 <pre class="highlighted"><code class="ruby"><span class="constant">ReferenceError</span><span class="symbol">:</span> vector2d is <span class="keyword">not</span> <span class="keyword">defined</span> <span class="keyword">in</span> <span class="symbol">http:</span>/<span class="regexp">/localhost:7357/specs</span><span class="regexp">/vector2dSpec.js (line 3)</code></pre>
 <p>Jasmine memberitahukan kepada kita bahwa objek vector2d belum terdefinisikan. Ini sudah jelas, kita belum menuliskan kode vector2d yang hendak kita test. Ayo kita tulis module tersebut. Kita simpan module vector2d pada alamat <code>code/src/vector2d.js</code>:</p>
@@ -110,7 +110,7 @@
         global.vector2d = vector2d;
     }(window));</code></pre>
 <p>Ketika kode di atas kita simpan, kita memperoleh tanda bahwa kode module <code>vector2d</code> sudah lolos uji coba:</p>
-<p><img src="pics/testem-passed.jpeg" alt=""></p>
+<p><img src="./../pics/testem-passed.jpeg" alt=""></p>
 <p>Sekarang mari kita buat kode test baru. Seiring kita membuat test, kita juga akan menambahkan kode pada module <code>vector2d</code> kita.</p>
 <p>Misalnya kita ingin memeriksa bahwa <code>add</code> pada <code>vector2d</code> adalah sebuah <code>function</code>. Maka, kode testnya adalah sebagai berikut:</p>
 <pre class="highlighted"><code class="javascript">    describe(<span class="string">"Vector2d"</span>, <span class="keyword">function</span>(){
@@ -123,7 +123,7 @@
         });
     });</code></pre>
 <p>Dan ketika kita simpan kode di atas, kita akan memperoleh tanda merah:</p>
-<p><img src="pics/testem-expected-function.jpeg" alt=""></p>
+<p><img src="./../pics/testem-expected-function.jpeg" alt=""></p>
 <p>Ok, masalahnya adalah, properti <code>add</code> pada objek <code>vector2d</code> adalah sebuah string, bukan fungsi. Jadi jelaslah jasmine membangkitkan kode di atas. Mari kita perbaiki module <code>vector2d</code> kita:</p>
 <pre class="highlighted"><code class="javascript">    (<span class="keyword">function</span>(global){
         <span class="keyword">var</span> vector2d = {
@@ -135,7 +135,7 @@
         global.vector2d = vector2d;
     }(window));</code></pre>
 <p>Dan ketika kita simpan, warna hijau muncul kembali. :D</p>
-<p><img src="pics/testem-typeof-function.jpeg" alt=""></p>
+<p><img src="./../pics/testem-typeof-function.jpeg" alt=""></p>
 <p>Ok, pada titik ini, kita sudah berkenalan dengan lima kata kunci pada Jasmine, yaitu <code>describe</code>, <code>it</code>, <code>expect</code>, <code>toBeDefined</code>, dan <code>toBe</code>. Jasmine masih menyediakan banyak fungsi lainnya yang bertujuan untuk memudahkan penulisan kode test kita.</p>
 <p>Sekarang saatnya kita menguji apakah <code>vector2d.add()</code> akan mengembalikan jawaban sesaui dengan harapan kita. Bila kita menambahkan dua buah vektor, <code>v1</code> dan <code>v2</code>, dimana pada tiap vektor, terdapat properti <code>x</code> dan <code>y</code>, maka kita juga mengharapkan metode <code>vector2d.add()</code> mengembalikan jawaban berupa sebuah objek dengan properti <code>x</code> dan <code>y</code> pula.</p>
 <p>Jadi, misal:</p>
@@ -156,7 +156,7 @@
         expect(vector2d.add(v1, v2).hasOwnProperty(<span class="string">"x"</span>)).toBeTruthy();
     });</code></pre>
 <p>Apa yang terjadi ketika kita menyimpan kode test di atas?</p>
-<p><img src="pics/testme-add-return.jpeg" alt=""></p>
+<p><img src="./../pics/testme-add-return.jpeg" alt=""></p>
 <p>Ok, kita memang belum mengembalikan apapun ketika metode <code>add</code> dijalankan (perhatikan <strong>TypeError: vector2d.add(...) is undefined</strong>). Mari kita buat kode secukupnya agar kode test kita berwarna hijau:</p>
 <pre class="highlighted"><code class="javascript">    <span class="keyword">var</span> vector2d = {
         add: <span class="keyword">function</span>(){
@@ -164,7 +164,7 @@
         }
     };</code></pre>
 <p>Hasilnya? Hijau.</p>
-<p><img src="pics/testme-add-return-passed.jpeg" alt=""></p>
+<p><img src="./../pics/testme-add-return-passed.jpeg" alt=""></p>
 <p>Sekarang saatnya memeriksa apakah kembalian dari metode <code>add</code> bernilai benar.</p>
 <pre class="highlighted"><code class="javascript">    it(<span class="string">"Add method should return the correct answer"</span>, <span class="keyword">function</span>(){
         <span class="keyword">var</span> v1 = { x: <span class="number">20</span>, y: <span class="number">30</span>},
@@ -173,7 +173,7 @@
         expect(vector2d.add(v1, v2)).toEqual({x: <span class="number">25</span>, y: <span class="number">31</span>});
     });</code></pre>
 <p>Namun, kode test di atas akan menghasilkan:</p>
-<p><img src="pics/testme-add-return-value-failed.jpeg" alt=""></p>
+<p><img src="./../pics/testme-add-return-value-failed.jpeg" alt=""></p>
 <p>Perhatikan bagaimana jasmine memberitahukan kepada kita, kesalahan yang berhasil ditangkap oleh kode test terhadap module <code>vector2d</code>. Ketika kita mengharapkan kembalian berupa <code>{x: 25, y: 31}</code>, metode <code>add</code> malah mengembalikan <code>{x: 0, y: 0}</code>. Jelas bukan pesan errornya?</p>
 <p>Saatnya memperbaiki metode <code>add</code>:</p>
 <pre class="highlighted"><code class="javascript">    <span class="keyword">var</span> vector2d = {
@@ -182,10 +182,10 @@
         }
     };</code></pre>
 <p>Dan, yap, hasilnya hijau:</p>
-<p><img src="pics/testme-add-return-value-passed.jpeg" alt=""></p>
+<p><img src="./../pics/testme-add-return-value-passed.jpeg" alt=""></p>
 <p>Ok, sampai disini semoga kita dapat melihat bagaiman <strong>testem</strong> telah memudahkan kita dalam menggunakan jasmine. Kita dapat memperoleh hasil dari testing secara langsung dan otomatis tiap kali kode kita mengalami perubahan.</p>
 <p>Jangan lupa juga, bahwa <strong>testem</strong> juga melaporkan progress test kita pada console dimana command <strong>testem</strong> dijalankan:</p>
-<p><img src="pics/testem-test-progress-4tests.jpeg" alt=""></p>
+<p><img src="./../pics/testem-test-progress-4tests.jpeg" alt=""></p>
 <h3>Menstrukturkan Test Suite</h3>
 <p>Kita dapat terus melanjutkan untuk menambahkan <strong>specs</strong> pada test kita sebelumnya. Namun ada suatu pendekatan yang dapat memudahkan kita dalam hal penstrukturan test.</p>
 <p>Misal, pada kode test yang sudah ada saat ini, kita mengetahui bahwa kita sedang melakukan pengujian terhadap metode <code>add</code> yang dimiliki oleh <code>vector2d</code>. Bagaimana kalau kita mengelompokkan seluruh pengujian terhadap <code>add</code> di dalam sebuah kelompok sendiri?</p>
@@ -216,7 +216,7 @@
         });
     });</code></pre>
 <p>Tampilan jasmine kita juga mengalami perubahan:</p>
-<p><img src="pics/testem-group.jpeg" alt=""></p>
+<p><img src="./../pics/testem-group.jpeg" alt=""></p>
 <h3>Matchers Lainnya</h3>
 <p>Metode seperti <code>toEqual</code>, <code>toBeDefined</code>, <code>toBeTruthy</code> yang sudah kami perlihatkan di atas adalah contoh dari <strong>matchers</strong>. Jasmine memiliki <strong>matchers</strong> lainnya yang dapat digunakan untuk menguji kode yang kita tulis.</p>
 <p>Beberepa <strong>matcher</strong> lain yang disediakan oleh Jasmine adalah sebagai berikut:</p>
